@@ -1,0 +1,7 @@
+mx\tecnm\toluca\mercado2proveedor1\resources\controllers\UserController.class
+mx\tecnm\toluca\mercado2proveedor1\model\User.class
+mx\tecnm\toluca\mercado2proveedor1\resources\services\impl\UserServices.class
+mx\tecnm\toluca\mercado2proveedor1\JAXRSConfiguration.class
+mx\tecnm\toluca\mercado2proveedor1\resources\services\IUserServices.class
+mx\tecnm\toluca\mercado2proveedor1\resources\repositories\UserRepository.class
+mx\tecnm\toluca\mercado2proveedor1\ApplicationException.class
