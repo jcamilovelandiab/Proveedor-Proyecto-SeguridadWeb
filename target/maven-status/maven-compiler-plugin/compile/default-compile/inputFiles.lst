@@ -1,7 +1,9 @@
-C:\Users\jcami\Desktop\Semestre2020-1\Seguridad Web\Tareas\Tareas prácticas\Mercado2Proveedor1\src\main\java\mx\tecnm\toluca\mercado2proveedor1\model\User.java
-C:\Users\jcami\Desktop\Semestre2020-1\Seguridad Web\Tareas\Tareas prácticas\Mercado2Proveedor1\src\main\java\mx\tecnm\toluca\mercado2proveedor1\JAXRSConfiguration.java
-C:\Users\jcami\Desktop\Semestre2020-1\Seguridad Web\Tareas\Tareas prácticas\Mercado2Proveedor1\src\main\java\mx\tecnm\toluca\mercado2proveedor1\resources\repositories\UserRepository.java
-C:\Users\jcami\Desktop\Semestre2020-1\Seguridad Web\Tareas\Tareas prácticas\Mercado2Proveedor1\src\main\java\mx\tecnm\toluca\mercado2proveedor1\resources\services\impl\UserServices.java
-C:\Users\jcami\Desktop\Semestre2020-1\Seguridad Web\Tareas\Tareas prácticas\Mercado2Proveedor1\src\main\java\mx\tecnm\toluca\mercado2proveedor1\ApplicationException.java
-C:\Users\jcami\Desktop\Semestre2020-1\Seguridad Web\Tareas\Tareas prácticas\Mercado2Proveedor1\src\main\java\mx\tecnm\toluca\mercado2proveedor1\resources\services\IUserServices.java
-C:\Users\jcami\Desktop\Semestre2020-1\Seguridad Web\Tareas\Tareas prácticas\Mercado2Proveedor1\src\main\java\mx\tecnm\toluca\mercado2proveedor1\resources\controllers\UserController.java
+D:\University\2020-1\Seguridad Web\Proyecto\ERP\Proveedor-Proyecto-SeguridadWeb\src\main\java\mx\tecnm\toluca\proveedor\resources\controllers\UserController.java
+D:\University\2020-1\Seguridad Web\Proyecto\ERP\Proveedor-Proyecto-SeguridadWeb\src\main\java\mx\tecnm\toluca\proveedor\resources\services\IUserServices.java
+D:\University\2020-1\Seguridad Web\Proyecto\ERP\Proveedor-Proyecto-SeguridadWeb\src\main\java\mx\tecnm\toluca\proveedor\resources\services\UserServices.java
+D:\University\2020-1\Seguridad Web\Proyecto\ERP\Proveedor-Proyecto-SeguridadWeb\src\main\java\mx\tecnm\toluca\proveedor\ApplicationException.java
+D:\University\2020-1\Seguridad Web\Proyecto\ERP\Proveedor-Proyecto-SeguridadWeb\src\main\java\mx\tecnm\toluca\proveedor\model\User.java
+D:\University\2020-1\Seguridad Web\Proyecto\ERP\Proveedor-Proyecto-SeguridadWeb\src\main\java\mx\tecnm\toluca\proveedor\model\Product.java
+D:\University\2020-1\Seguridad Web\Proyecto\ERP\Proveedor-Proyecto-SeguridadWeb\src\main\java\mx\tecnm\toluca\proveedor\ApplicationConfiguration.java
+D:\University\2020-1\Seguridad Web\Proyecto\ERP\Proveedor-Proyecto-SeguridadWeb\src\main\java\mx\tecnm\toluca\proveedor\resources\controllers\ProductController.java
+D:\University\2020-1\Seguridad Web\Proyecto\ERP\Proveedor-Proyecto-SeguridadWeb\src\main\java\mx\tecnm\toluca\proveedor\resources\repositories\UserRepository.java
