@@ -1,4 +1,4 @@
-package mx.tecnm.toluca.proveedor.resources.controllers;
+package mx.tecnm.toluca.proveedor.api.controllers;
 
 import java.util.List;
 import java.util.logging.Level;
@@ -15,9 +15,9 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import mx.tecnm.toluca.proveedor.model.Usuario;
-import mx.tecnm.toluca.proveedor.resources.repositories.UsuarioRepository;
-import mx.tecnm.toluca.proveedor.resources.services.IUserServices;
-import mx.tecnm.toluca.proveedor.resources.services.UserServices;
+import mx.tecnm.toluca.proveedor.api.repositories.UsuarioRepository;
+import mx.tecnm.toluca.proveedor.api.services.IUserServices;
+import mx.tecnm.toluca.proveedor.api.services.UserServices;
 
 /**
  *

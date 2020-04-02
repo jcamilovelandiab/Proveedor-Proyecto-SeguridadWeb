@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mx.tecnm.toluca.proveedor.resources.services;
+package mx.tecnm.toluca.proveedor.api.services;
 
 import java.util.List;
 import javax.inject.Named;
 import javax.security.enterprise.authentication.mechanism.http.AutoApplySession;
 import mx.tecnm.toluca.proveedor.model.Usuario;
-import mx.tecnm.toluca.proveedor.resources.repositories.UsuarioRepository;
+import mx.tecnm.toluca.proveedor.api.repositories.UsuarioRepository;
 
 /**
  *

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mx.tecnm.toluca.proveedor.resources.repositories;
+package mx.tecnm.toluca.proveedor.api.repositories;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mx.tecnm.toluca.proveedor.resources.controllers;
+package mx.tecnm.toluca.proveedor.api.controllers;
 
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
