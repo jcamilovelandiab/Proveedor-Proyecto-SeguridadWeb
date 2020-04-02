@@ -6,7 +6,7 @@
 package mx.tecnm.toluca.proveedor.resources.services;
 
 import java.util.List;
-import mx.tecnm.toluca.proveedor.model.User;
+import mx.tecnm.toluca.proveedor.model.Usuario;
 
 /**
  *
@@ -14,8 +14,8 @@ import mx.tecnm.toluca.proveedor.model.User;
  */
 public interface IUserServices {
     
-    public User getUserByUsername(String username) throws Exception;
-    public User getUserByUsernameAndPassword(String username, String password) throws Exception;
-    public List<User> getUsers() throws Exception;
+    public Usuario getUserByUsername(String username) throws Exception;
+    public Usuario getUserByUsernameAndPassword(String username, String password) throws Exception;
+    public List<Usuario> getUsers() throws Exception;
     
 }

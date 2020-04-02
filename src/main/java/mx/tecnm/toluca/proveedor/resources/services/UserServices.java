@@ -8,8 +8,8 @@ package mx.tecnm.toluca.proveedor.resources.services;
 import java.util.List;
 import javax.inject.Named;
 import javax.security.enterprise.authentication.mechanism.http.AutoApplySession;
-import mx.tecnm.toluca.proveedor.model.User;
-import mx.tecnm.toluca.proveedor.resources.repositories.UserRepository;
+import mx.tecnm.toluca.proveedor.model.Usuario;
+import mx.tecnm.toluca.proveedor.resources.repositories.UsuarioRepository;
 
 /**
  *
@@ -19,10 +19,10 @@ import mx.tecnm.toluca.proveedor.resources.repositories.UserRepository;
 public class UserServices implements IUserServices{
 
     //public UserRepository userRepository = UserRepository.getInstance();
-    public UserRepository userRepository;
+    public UsuarioRepository userRepository;
     
     public UserServices(){
-        userRepository = new UserRepository();
+        userRepository = new UsuarioRepository();
     }
     
     /**
@@ -31,16 +31,16 @@ public class UserServices implements IUserServices{
      * @return
      * @throws Exception
      */
-    public User getUserByUsername(String username) throws Exception {
-        return userRepository.getUserByUsername(username);
+    public Usuario getUserByUsername(String username) throws Exception {
+        return null;
     }
 
-    public User getUserByUsernameAndPassword(String username, String password) throws Exception{
-        return userRepository.getUserByUsernameAndPassword(username, password);
+    public Usuario getUserByUsernameAndPassword(String username, String password) throws Exception{
+        return null;
     }
     
-    public List<User> getUsers() throws Exception{
-        return userRepository.getUsers();
+    public List<Usuario> getUsers() throws Exception{
+        return null;
     }
     
 }

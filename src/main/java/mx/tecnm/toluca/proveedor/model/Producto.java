@@ -9,16 +9,16 @@ package mx.tecnm.toluca.proveedor.model;
  *
  * @author jcami
  */
-public class Product {
+public class Producto {
     
     String id;
     String name;
     String amount;
 
-    public Product() {
+    public Producto() {
     }
 
-    public Product(String id, String name, String amount) {
+    public Producto(String id, String name, String amount) {
         this.id = id;
         this.name = name;
         this.amount = amount;
