@@ -20,12 +20,12 @@ import javax.validation.constraints.Size;
  * @author jcami
  */
 @Entity
-@Table(name="user")
+@Table(name="usuario")
 public class Usuario implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="usuario_id")
+    @Column(name="usuarioId")
     private Long usuarioId;
     
     @NotNull

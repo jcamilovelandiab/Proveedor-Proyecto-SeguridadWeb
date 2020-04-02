@@ -5,7 +5,7 @@
  */
 package mx.tecnm.toluca.proveedor.api.controllers;
 
-import javax.ws.rs.POST;
+import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 
 /**
@@ -15,9 +15,9 @@ import javax.ws.rs.Path;
 @Path("login")
 public class LoginController {
     
-    @POST
+    @GET
     public String login(){
-        return null;
+        return "Este es el controlador del login";
     }
     
 }

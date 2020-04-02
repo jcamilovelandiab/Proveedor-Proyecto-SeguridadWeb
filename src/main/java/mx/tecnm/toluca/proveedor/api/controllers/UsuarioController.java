@@ -1,8 +1,5 @@
 package mx.tecnm.toluca.proveedor.api.controllers;
 
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.ejb.EJB;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -16,8 +13,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import mx.tecnm.toluca.proveedor.model.Usuario;
 import mx.tecnm.toluca.proveedor.api.repositories.UsuarioRepository;
-import mx.tecnm.toluca.proveedor.api.services.IUserServices;
-import mx.tecnm.toluca.proveedor.api.services.UserServices;
 
 /**
  *
@@ -28,8 +23,14 @@ import mx.tecnm.toluca.proveedor.api.services.UserServices;
 @Consumes(MediaType.APPLICATION_JSON)
 public class UsuarioController {
     
+    /*
     @EJB
     private UsuarioRepository usuarioRepository;
+    */
+    @GET
+    public String get(){
+        return "Este es el controlador del usuario";
+    }
     
     @POST
     public Response crear(Usuario usuario){

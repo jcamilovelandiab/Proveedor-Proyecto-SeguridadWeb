@@ -33,5 +33,4 @@ public class Rol implements Serializable{
     @Column(name = "nombre")
     private String nombre;
     
-    
 }
