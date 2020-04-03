@@ -7,16 +7,19 @@ package mx.tecnm.toluca.proveedor.api.repositories;
 
 import java.io.Serializable;
 import java.util.List;
+import mx.tecnm.toluca.proveedor.ApplicationException;
 
 /**
  *
  * @author jcami
+ * @param <T>
+ * @param <PK>
  */
 public interface DAO<T extends Serializable, PK>{
-    //public List<T> findAll() throws Exception;
-    public T find(PK findByPK) throws Exception;
-    public void save(T entity) throws Exception;
-    public T update(T entity) throws Exception;
-    public void delete(T entity) throws Exception;
-    //public void remove(PK pkEntity) throws Exception;
+    public List<T> findAll() throws ApplicationException;
+    public T find(PK findByPK) throws ApplicationException;
+    public void save(T entity) throws ApplicationException;
+    public T update(T entity) throws ApplicationException;
+    public void delete(T entity) throws ApplicationException;
+    public void remove(PK pkEntity) throws ApplicationException;
 }
