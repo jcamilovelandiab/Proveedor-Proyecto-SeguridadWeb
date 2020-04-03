@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.inject.Named;
+import mx.tecnm.toluca.proveedor.ApplicationError;
 import mx.tecnm.toluca.proveedor.ApplicationException;
 import mx.tecnm.toluca.proveedor.api.repositories.IUsuarioRepository;
 import mx.tecnm.toluca.proveedor.model.Usuario;
@@ -35,8 +36,8 @@ public class UsuarioStubRepository implements IUsuarioRepository{
     
     @Override
     public Usuario find(Long findByPK) throws ApplicationException {
-        if(usuarios.containsKey(findByPK)){
-            throw new ApplicationException("El usuario no existe");
+        if(!usuarios.containsKey(findByPK)){
+            throw new ApplicationException(ApplicationError.RECURSO_NO_EXISTE.name());
         }
         Usuario usuario = usuarios.get(findByPK);
         usuario.setUsuarioId(null);
@@ -45,25 +46,33 @@ public class UsuarioStubRepository implements IUsuarioRepository{
 
     @Override
     public void save(Usuario entity) throws ApplicationException {
-        System.out.println("Hey estoy acá");
         if(usuarios.containsKey(entity.getUsuarioId())){
-           throw new ApplicationException("Ya existe un usuario con el mismo id"); 
+           throw new ApplicationException(ApplicationError.RECURSO_DUPLICADO.name()); 
         }
         usuarios.put(entity.getUsuarioId(), entity);
     }
 
     @Override
     public Usuario update(Usuario entity) throws ApplicationException {
+        if(!usuarios.containsKey(entity.getUsuarioId())){
+            throw new ApplicationException(ApplicationError.RECURSO_NO_EXISTE.name());
+        }
         return usuarios.replace(entity.getUsuarioId(), entity);
     }
 
     @Override
     public void delete(Usuario entity) throws ApplicationException {
+        if(!usuarios.containsKey(entity.getUsuarioId())){
+            throw new ApplicationException(ApplicationError.RECURSO_NO_EXISTE.name());
+        }
         usuarios.remove(entity.getUsuarioId());
     }
 
     @Override
     public void remove(Long pkEntity) throws ApplicationException {
+        if(!usuarios.containsKey(pkEntity)){
+            throw new ApplicationException(ApplicationError.RECURSO_NO_EXISTE.name());
+        }
         usuarios.remove(pkEntity);
     }
 

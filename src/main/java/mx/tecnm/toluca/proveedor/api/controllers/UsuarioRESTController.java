@@ -16,6 +16,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import mx.tecnm.toluca.proveedor.ApplicationError;
 import mx.tecnm.toluca.proveedor.ApplicationException;
 import mx.tecnm.toluca.proveedor.api.repositories.IUsuarioRepository;
 import mx.tecnm.toluca.proveedor.model.Usuario;
@@ -39,33 +40,84 @@ public class UsuarioRESTController {
         List<Usuario> usuarioA = new ArrayList<>();
         try {
             usuarioA = usuarioRepository.findAll();
+            return Response.ok(200).entity(usuarioA).build();
         } catch (ApplicationException ex) {
             Logger.getLogger(UsuarioRESTController.class.getName()).log(Level.SEVERE, null, ex);
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         }
-        return Response.ok(200).entity(usuarioA).build();
     }
     
     @POST
     public Response crear(Usuario usuario){
-        throw new UnsupportedOperationException("error");
+        try {
+            usuarioRepository.save(usuario);
+            return Response.ok(200).build();
+        } catch (ApplicationException ex) {
+            Logger.getLogger(UsuarioRESTController.class.getName()).log(Level.SEVERE, null, ex);
+            if(ex.getMessage().equals(ApplicationError.RECURSO_DUPLICADO.name())){
+                return Response.status(Response.Status.NOT_FOUND).build();
+            }else if(ex.getMessage().equals(ApplicationError.ERROR_BASE_DE_DATOS.name())){
+                return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
+            }
+            return Response.status(Response.Status.BAD_REQUEST).build();
+        }
     }
     
     @GET
     @Path("/{usuarioId}")
-    public Response buscar(@PathParam("usuarioId") String usuarioId){
+    public Response buscar(@PathParam("usuarioId") Long usuarioId){
         return Response.ok(200).entity("Este es el usuario "+usuarioId).build();
+        /*
+        try {
+            Usuario u = usuarioRepository.find(usuarioId);
+            return Response.ok(200).entity(u).build();
+        } catch (ApplicationException ex) {
+            Logger.getLogger(UsuarioRESTController.class.getName()).log(Level.SEVERE, null, ex);
+            if(ex.getMessage().equals(ApplicationError.RECURSO_NO_EXISTE.name())){
+                return Response.status(Response.Status.NOT_FOUND).build();
+            }else if(ex.getMessage().equals(ApplicationError.ERROR_BASE_DE_DATOS.name())){
+                return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
+            }
+            return Response.status(Response.Status.BAD_REQUEST).build();
+        }
+        */
     }
     
     @PUT
     @Path("/{usuarioId:[0-9][0-9]*}")
     public Response actualizar(@PathParam("usuarioId") Long usuarioId, Usuario usuario){
-        return Response.ok(200).build();
+        try {
+            if(!usuarioId.equals(usuario.getUsuarioId())){
+                return Response.status(Response.Status.BAD_REQUEST).build();
+            }
+            Usuario u = usuarioRepository.update(usuario);
+            return Response.ok(200).entity(u).build();
+        } catch (ApplicationException ex) {
+            Logger.getLogger(UsuarioRESTController.class.getName()).log(Level.SEVERE, null, ex);
+            if(ex.getMessage().equals(ApplicationError.RECURSO_NO_EXISTE.name())){
+                return Response.status(Response.Status.NOT_FOUND).build();
+            }else if(ex.getMessage().equals(ApplicationError.ERROR_BASE_DE_DATOS.name())){
+                return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
+            }
+            return Response.status(Response.Status.BAD_REQUEST).build();
+        }
     }
     
     @DELETE
     @Path("/{usuarioId:[0-9][0-9]*}")
     public Response eliminar(@PathParam("usuarioId") Long usuarioId){
-        return Response.ok(200).build();
+        try {
+            usuarioRepository.remove(usuarioId);
+            return Response.ok(200).build();
+        } catch (ApplicationException ex) {
+            Logger.getLogger(UsuarioRESTController.class.getName()).log(Level.SEVERE, null, ex);
+            if(ex.getMessage().equals(ApplicationError.RECURSO_NO_EXISTE.name())){
+                return Response.status(Response.Status.NOT_FOUND).build();
+            }else if(ex.getMessage().equals(ApplicationError.ERROR_BASE_DE_DATOS.name())){
+                return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
+            }
+            return Response.status(Response.Status.BAD_REQUEST).build();
+        }
     }
     
 }
