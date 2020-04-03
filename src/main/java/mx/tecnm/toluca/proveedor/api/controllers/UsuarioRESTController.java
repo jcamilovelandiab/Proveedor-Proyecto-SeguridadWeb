@@ -27,7 +27,7 @@ import mx.tecnm.toluca.proveedor.model.Usuario;
 @Path("/usuarios")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-public class UsuarioController {
+public class UsuarioRESTController {
     
     // Los dos repositorios. Uno es caché y otro está conectado a la base de datos
     @Inject
@@ -40,7 +40,7 @@ public class UsuarioController {
         try {
             usuarioA = usuarioRepository.findAll();
         } catch (ApplicationException ex) {
-            Logger.getLogger(UsuarioController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UsuarioRESTController.class.getName()).log(Level.SEVERE, null, ex);
         }
         return Response.ok(200).entity(usuarioA).build();
     }

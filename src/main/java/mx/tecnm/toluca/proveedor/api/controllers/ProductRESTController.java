@@ -7,17 +7,20 @@ package mx.tecnm.toluca.proveedor.api.controllers;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.core.Response;
 
 /**
  *
  * @author jcami
  */
-@Path("login")
-public class LoginController {
+@Path("products")
+public class ProductRESTController {
     
     @GET
-    public String login(){
-        return "Este es el controlador del login";
+    public Response ping(){
+        return Response
+                .ok("Hey! This is the product controller")
+                .build();
     }
     
 }
